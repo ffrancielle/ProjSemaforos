@@ -1,0 +1,77 @@
+led verde       -> 1
+on = 1
+off= 254
+
+led amarelo     -> 2
+on = 2
+off= 253
+
+led vermelho    -> 3
+on = 4
+off= 251
+
+led x 4
+on = 8
+off= 247
+
+led x 5
+on = 16
+off= 239
+
+led verde       -> 6
+on = 32
+off= 223
+
+led amarelo     -> 7
+on = 64
+off= 191
+
+led vermelho    -> 8
+on = 128
+off= 127
+
+--------------------------------------------------------------------
+
+// Atualiza as imagens de pic_rua1
+    if (sema.getled(1))
+    {
+        pic_rua1.Image = Semáforo.Properties.Resources.verde; // Verde R1
+    }
+    else if (sema.getled(2))
+    {
+        pic_rua1.Image = Semáforo.Properties.Resources.amarelo; // Amarelo R1
+    }
+    else if (sema.getled(3))
+    {
+        pic_rua1.Image = Semáforo.Properties.Resources.vermelho; // Vermelho R1
+    }
+    else
+    {
+        pic_rua1.Image = Semáforo.Properties.Resources.desligado; // Nenhum LED aceso
+    }
+
+    // Atualiza as imagens de pic_rua2
+    if (sema.getled(6))
+    {
+        pic_rua2.Image = Semáforo.Properties.Resources.verde; // Verde R2
+    }
+    else if (sema.getled(7))
+    {
+        pic_rua2.Image = Semáforo.Properties.Resources.amarelo; // Amarelo R2
+    }
+    else if (sema.getled(8))
+    {
+        pic_rua2.Image = Semáforo.Properties.Resources.vermelho; // Vermelho R2
+    }
+    else
+    {
+        pic_rua2.Image = Semáforo.Properties.Resources.desligado; // Nenhum LED aceso
+    }
+
+
+--------------------------------------------------------------------------------------------------
+
+sema.apagar();
+sema.apagar();
+sema.ligar();
+atualizarIterface();
